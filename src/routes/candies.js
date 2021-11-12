@@ -53,7 +53,7 @@ router.post('/update/:id' , async (req, res) =>{
 router.post('/delete/:id', async (req, res) =>{
     const{id} = req.params;
 
-    await pool.query('UPDATE candies SET status = 0 WHERE idProduct = ?',[id]);
+    await pool.query('UPDATE candies SET status = 0 WHERE id = ?',[id]);
     res.json({
         status: 200,
         message: "Se ha eliminado correctamente el dulce"
